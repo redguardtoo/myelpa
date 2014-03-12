@@ -1,2 +1,10 @@
 * myelpa (version 0.0.1)
 The emacs packages I'm using.
+
+* Usage
+Add below line into ~/.emacs:
+#+BEGIN_SRC elisp
+(setq package-archives '(("myelpa" . "https://raw.github.com/redguardtoo/myelpa/master/")))
+#+END_SRC
+
+Then you will use exact same packages I'm using. No more, no less.
