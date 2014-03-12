@@ -2,9 +2,22 @@
 The emacs packages I'm using.
 
 * Usage
+** Solution 1
+- Click "Download ZIP"
+- Extract zip somewhere say "~/myelpa".
+- Double check that there is a file name "archive-contents" in the directory "~/myelpa".
+- insert below code into end of ~/.emacs.d/init.el or ~/.emacs.
+#+BEGIN_SRC bash
+(setq package-archives '(("myelpa" . "~/myelpa/")))
+#+END_SRC
+
+This solution *does not need* internet connection.
+** Solution 2
 Add below line into ~/.emacs:
 #+BEGIN_SRC elisp
 (setq package-archives '(("myelpa" . "https://raw.github.com/redguardtoo/myelpa/master/")))
 #+END_SRC
 
 Then you will use exact same packages I'm using. No more, no less.
+
+This solution *need* internet connection.
