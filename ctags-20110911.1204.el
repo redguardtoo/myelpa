@@ -2,8 +2,7 @@
 
 ;; Copyright  (C)  2011 Free Software Foundation, Inc.
 
-;; Version: 20110911.1204
-;; X-Original-Version: 1.1.1
+;; Version: 1.1.1
 ;; Keywords: tags ctags etags
 ;; Author: Guilherme M. Gondim <semente@taurinus.org>
 ;; Maintainer: Guilherme M. Gondim <semente@taurinus.org>
