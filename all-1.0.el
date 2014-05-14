@@ -1,7 +1,6 @@
 ;;; all.el --- Edit all lines matching a given regexp
 
-;; Copyright (C) 1985-1987, 1992, 1994, 2011 Free Software Foundation, Inc.
-;; Copyright (C) 1994 Per Abrahamsen
+;; Copyright (C) 1985-1987,1992,1994,2011-2012 Free Software Foundation, Inc.
 
 ;; Author: Per Abrahamsen <abraham@dina.kvl.dk>
 ;; Version: 1.0
@@ -198,6 +197,28 @@ Any changes made in that buffer will be propagated to this buffer."
         (goto-char to)
         (if (> nlines 0)
             (insert "--------\n"))))))
+
+;;;; ChangeLog:
+
+;; 2012-10-30  Stefan Monnier  <monnier@iro.umontreal.ca>
+;; 
+;; 	Clean up copyright notices.
+;; 
+;; 2011-07-04  Stefan Monnier  <monnier@iro.umontreal.ca>
+;; 
+;; 	Add sisu-mode.el.  Update all.el licence.
+;; 
+;; 2011-07-01  Chong Yidong  <cyd@stupidchicken.com>
+;; 
+;; 	Reorganize repository layout, allowing site installation.
+;; 	
+;; 	A Makefile with "site", "archive" and "archive-full" rules can now be
+;; 	used for site-installation, partial archive deployment, and full
+;; 	archive deployment respectively.
+;; 	
+;; 	Rewrite the admin/archive-contents.el script to handle these changes.
+;; 
+
 
 (provide 'all)
 
