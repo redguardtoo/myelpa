@@ -21,3 +21,15 @@ Add below line into ~/.emacs:
 Then you will use exact same packages I'm using. No more, no less.
 
 This solution *need* internet connection.
+* Warning
+The variable "package-archives" should have only one repository "myelpa".
+
+So you need place above code behind the code manipulating package-archives:
+#+BEGIN_SRC elisp
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+#+END_SRC
+
+Or 
+#+BEGIN_SRC elisp
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+#+END_SRC
