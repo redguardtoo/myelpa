@@ -1,9 +1,9 @@
-
 ;;; flymake-css.el --- Flymake support for css using csslint
 ;;
 ;;; Author: Steve Purcell <steve@sanityinc.com>
 ;;; Homepage: https://github.com/purcell/flymake-css
-;;; Version: 0.3
+;; Version: 0.3
+;;; X-Original-Version: DEV
 ;;; Package-Requires: ((flymake-easy "0.1"))
 ;;
 ;;; Commentary:
@@ -22,7 +22,7 @@
 ;; matching filename extensions (e.g. "*.css") redundantly.
 ;;
 ;; Based mainly on the author's flymake-jslint.el, and using the
-;; error regex from Arne Jørgensen's similar flymake-csslint.el.
+;; error regex from Arne JÃ¸rgensen's similar flymake-csslint.el.
 ;;
 ;; Uses flymake-easy, from https://github.com/purcell/flymake-easy
 

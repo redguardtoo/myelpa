@@ -1,9 +1,9 @@
-
 ;;; flymake-ruby.el --- A flymake handler for ruby-mode files
 ;;
 ;;; Author: Steve Purcell <steve@sanityinc.com>
 ;;; URL: https://github.com/purcell/flymake-ruby
-;;; Version: 0.8
+;; Version: 0.8
+;;; X-Original-Version: DEV
 ;;; Package-Requires: ((flymake-easy "0.1"))
 ;;;
 ;;; Commentary:

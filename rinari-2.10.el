@@ -1,4 +1,3 @@
-
 ;;; rinari.el --- Rinari Is Not A Rails IDE
 
 ;; Copyright (C) 2008 Phil Hagelberg, Eric Schulte
@@ -6,6 +5,7 @@
 ;; Author: Phil Hagelberg, Eric Schulte
 ;; URL: https://github.com/eschulte/rinari
 ;; Version: 2.10
+;; X-Original-Version: DEV
 ;; Created: 2006-11-10
 ;; Keywords: ruby, rails, project, convenience, web
 ;; EmacsWiki: Rinari

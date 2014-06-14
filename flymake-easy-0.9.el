@@ -1,4 +1,3 @@
-
 ;;; flymake-easy.el --- Helpers for easily building flymake checkers
 
 ;; Copyright (C) 2012 Steve Purcell
@@ -6,6 +5,7 @@
 ;; Author: Steve Purcell <steve@sanityinc.com>
 ;; URL: https://github.com/purcell/flymake-easy
 ;; Version: 0.9
+;; X-Original-Version: DEV
 ;; Keywords: convenience, internal
 
 ;; This program is free software; you can redistribute it and/or modify

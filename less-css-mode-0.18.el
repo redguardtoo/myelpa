@@ -1,4 +1,3 @@
-
 ;;; less-css-mode.el --- Major mode for editing LESS CSS files (lesscss.org)
 ;;
 ;; Copyright 2011 Steve Purcell
@@ -7,6 +6,7 @@
 ;; URL: https://github.com/purcell/less-css-mode
 ;; Keywords: less css mode
 ;; Version: 0.18
+;; X-Original-Version: DEV
 ;;
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -69,7 +69,7 @@
 
 ;; There are at least three css-mode.el implementations, but we need
 ;; the right one in order to work as expected, not the versions by
-;; Landström or Garshol
+;; LandstrÃ¶m or Garshol
 
 (require 'css-mode)
 (unless (or (boundp 'css-navigation-syntax-table)

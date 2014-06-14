@@ -4,6 +4,7 @@
 
 ;; Author: Magnar Sveen <magnars@gmail.com>
 ;; Version: 1.9.0
+;; X-Original-Version: 1.9.0
 ;; Keywords: strings
 
 ;; This program is free software; you can redistribute it and/or modify

@@ -1,4 +1,3 @@
-
 ;;; ruby-compilation.el --- run a ruby process in a compilation buffer
 
 ;; Copyright (C) 2008 Eric Schulte
@@ -6,6 +5,7 @@
 ;; Author: Eric Schulte
 ;; URL: https://github.com/eschulte/rinari
 ;; Version: 2.10
+;; X-Original-Version: 0.9
 ;; Created: 2008-08-23
 ;; Keywords: test convenience
 ;; Package-Requires: ((inf-ruby "2.2.1"))
@@ -110,13 +110,6 @@ Should be used with `make-local-variable'.")
 ;; Low-level API entry point
 (defun ruby-compilation-do (name cmdlist)
   "In a compilation buffer identified by NAME, run CMDLIST."
-  (save-some-buffers (not compilation-ask-about-save)
-                     (when (boundp 'compilation-save-buffers-predicate)
-                       compilation-save-buffers-predicate))
-  (let ((this-dir default-directory)
-        (existing-buffer (get-buffer (concat "*" name "*"))))
-    (with-current-buffer existing-buffer
-      (setq default-directory this-dir)))
   (let* ((buffer (apply 'make-comint name (car cmdlist) nil (cdr cmdlist)))
          (proc (get-buffer-process buffer)))
     (with-current-buffer buffer

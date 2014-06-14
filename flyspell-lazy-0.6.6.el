@@ -6,6 +6,7 @@
 ;; Homepage: http://github.com/rolandwalker/flyspell-lazy
 ;; URL: http://raw.github.com/rolandwalker/flyspell-lazy/master/flyspell-lazy.el
 ;; Version: 0.6.6
+;; X-Original-Version: 0.6.6
 ;; Last-Updated: 28 Oct 2013
 ;; EmacsWiki: FlyspellLazy
 ;; Keywords: spelling

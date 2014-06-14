@@ -7,6 +7,7 @@
 ;; Created: 2002-03-03
 ;; Keywords: faces, frames, emulation
 ;; Version: 1.0.0
+;; X-Original-Version: 1.0.0
 
 ;; This file is NOT part of GNU Emacs, but is very much a derived work
 ;; of hl-line.el, which is a part of GNU Emacs.

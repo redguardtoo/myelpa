@@ -1,4 +1,3 @@
-
 ;;; flymake-python-pyflakes.el --- A flymake handler for python-mode files using pyflakes (or flake8)
 
 ;; Copyright (C) 2012 Steve Purcell
@@ -6,6 +5,7 @@
 ;; Author: Steve Purcell <steve@sanityinc.com>
 ;; URL: https://github.com/purcell/flymake-python-pyflakes
 ;; Version: 0.9
+;; X-Original-Version: DEV
 ;; Package-Requires: ((flymake-easy "0.8"))
 
 ;;; Commentary:

@@ -1,4 +1,3 @@
-
 ;;; haml-mode.el --- Major mode for editing Haml files
 
 ;; Copyright (c) 2007, 2008 Nathan Weizenbaum
@@ -7,6 +6,7 @@
 ;; URL: http://github.com/nex3/haml/tree/master
 ;; Package-Requires: ((ruby-mode "1.0"))
 ;; Version: 3.1.5
+;; X-Original-Version: DEV
 ;; Created: 2007-03-08
 ;; By: Nathan Weizenbaum
 ;; Keywords: markup, language, html
@@ -168,7 +168,7 @@ This requires that `css-mode' is available.
 (defun haml-fontify-region-as-javascript (beg end)
   "Fontify javascript code from BEG to END.
 
-This requires that Karl Landström's javascript mode be available, either as the
+This requires that Karl LandstrÃ¶m's javascript mode be available, either as the
 \"js.el\" bundled with Emacs >= 23, or as \"javascript.el\" found in ELPA and
 elsewhere."
   (let ((keywords (or (and (featurep 'js) js--font-lock-keywords-3)

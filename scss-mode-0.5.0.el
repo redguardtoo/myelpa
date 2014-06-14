@@ -4,6 +4,7 @@
 ;; URL: https://github.com/antonj/scss-mode
 ;; Created: Sep 1 23:11:26 2010
 ;; Version: 0.5.0
+;; X-Original-Version: 0.5.0
 ;; Keywords: scss css mode
 ;;
 ;; This program is free software; you can redistribute it and/or
@@ -62,8 +63,7 @@ HYPERLINK HIGHLIGHT)"
 
 (defconst scss-font-lock-keywords
   ;; Variables
-  '(("$[a-z_-][a-z-_0-9]*" . font-lock-constant-face)
-    ("//.*$" . font-lock-comment-face)))
+  '(("$[a-z_-][a-z-_0-9]*" . font-lock-constant-face)))
 
 (defun scss-compile-maybe()
   "Runs `scss-compile' on if `scss-compile-at-save' is t"
@@ -83,6 +83,10 @@ HYPERLINK HIGHLIGHT)"
 Special commands:
 \\{scss-mode-map}"
   (font-lock-add-keywords nil scss-font-lock-keywords)
+  ;; Add the single-line comment syntax ('//', ends with newline)
+  ;; as comment style 'b' (see "Syntax Flags" in elisp manual)
+  (modify-syntax-entry ?/ ". 124b" css-mode-syntax-table)
+  (modify-syntax-entry ?\n "> b" css-mode-syntax-table)
   (add-to-list 'compilation-error-regexp-alist scss-compile-error-regex)
   (add-hook 'after-save-hook 'scss-compile-maybe nil t))
 

@@ -1,9 +1,9 @@
-
 ;;; flymake-sass.el --- Flymake handler for sass files
 ;;
 ;;; Author: Steve Purcell <steve@sanityinc.com>
 ;;; URL: https://github.com/purcell/flymake-sass
-;;; Version: 0.6
+;; Version: 0.6
+;;; X-Original-Version: DEV
 ;;; Package-Requires: ((flymake-easy "0.1"))
 ;;
 ;;; Commentary:

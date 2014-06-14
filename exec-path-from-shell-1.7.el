@@ -1,4 +1,3 @@
-
 ;;; exec-path-from-shell.el --- Get environment variables such as $PATH from the shell
 
 ;; Copyright (C) 2012-2014 Steve Purcell
@@ -7,6 +6,7 @@
 ;; Keywords: environment
 ;; URL: https://github.com/purcell/exec-path-from-shell
 ;; Version: 1.7
+;; X-Original-Version: DEV
 
 ;; This file is not part of GNU Emacs.
 

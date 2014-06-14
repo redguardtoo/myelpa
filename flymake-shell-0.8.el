@@ -1,10 +1,10 @@
-
 ;;; flymake-shell.el --- A flymake syntax-checker for shell scripts
 ;;
 ;;; Copyright (C) 2011 Steve Purcell
 ;;; Author: Steve Purcell <steve@sanityinc.com>
 ;;; URL: https://github.com/purcell/flymake-shell
-;;; Version: 0.8
+;; Version: 0.8
+;;; X-Original-Version: DEV
 ;;; Package-Requires: ((flymake-easy "0.1"))
 ;;;
 ;;; Commentary:

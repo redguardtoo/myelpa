@@ -1,4 +1,3 @@
-
 ;;; ibuffer-vc.el --- Group ibuffer's list by VC project, or show VC status
 ;;
 ;; Copyright (C) 2011-2012 Steve Purcell
@@ -9,6 +8,7 @@
 ;; X-URL: http://github.com/purcell/ibuffer-vc
 ;; URL: http://github.com/purcell/ibuffer-vc
 ;; Version: 0.7
+;; X-Original-Version: DEV
 ;;
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by

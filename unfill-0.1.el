@@ -1,10 +1,10 @@
-
 ;;; unfill.el --- The inverse of fill-paragraph and fill-region
 
 ;; Copyright (C) 2012 Steve Purcell.
 
 ;; Author: Steve Purcell <steve@sanityinc.com>
 ;; Version: 0.1
+;; X-Original-Version: DEV
 ;; Keywords: utilities
 
 ;; Based on Xah Lee's examples: http://xahlee.org/emacs/emacs_unfill-paragraph.html

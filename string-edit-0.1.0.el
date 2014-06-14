@@ -4,6 +4,7 @@
 
 ;; Author: Magnar Sveen <magnars@gmail.com>
 ;; Version: 0.1.0
+;; X-Original-Version: 0.1.0
 ;; Package-Requires: ((dash "1.2.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
