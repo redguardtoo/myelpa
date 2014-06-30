@@ -1,6 +1,6 @@
 ;;; eldoc-eval.el --- Enable eldoc support when minibuffer is in use.
 
-;; Copyright (C) 2011, 2012 Free Software Foundation, Inc.
+;; Copyright (C) 2011 Free Software Foundation, Inc.
 
 ;; Author: Thierry Volpiatto <thierry.volpiatto@gmail.com>
 ;; Version: 0.1
@@ -22,24 +22,24 @@
 
 ;;; Commentary:
 ;;
-;; This package enables eldoc support when minibuffer is in use.
+;; This package enable eldoc support when minibuffer is in use.
 ;;
-;; Eldoc info is shown by default in mode-line,
+;; Eldoc info are shown by default in mode-line.
 ;; but you can have eldoc info somewhere else by setting
-;; `eldoc-in-minibuffer-show-fn' to another function (e.g `tooltip-show').
+;; `eldoc-in-minibuffer-show-fn' to an other function (e.g `tooltip-show').
 ;;
 ;; By default with this package `M-:' will use `pp-eval-expression'
-;; instead of `eval-expression'; you can change that by setting
-;; `eval-preferred-function'.
+;; instead of `eval-expression'; You can change that in
+;; `eval-prefered-function'.
 ;;
-;; It also provides a convenient macro to enable eldoc support
+;; It provide also a convenient macro to enable eldoc support
 ;; in your own functions using minibuffer or in your defadvices,
 ;; that is `with-eldoc-in-minibuffer'.
 ;;
 ;; Users of own minibuffer frame will have to set
-;; `eldoc-in-minibuffer-own-frame-p' to non-nil.
+;; `eldoc-in-minibuffer-own-frame-p' to non--nil.
 ;;
-;; You can turn off eldoc support in minibuffer any time
+;; You can turn off at anytime eldoc support in minibuffer
 ;; by setting `eldoc-in-minibuffer' to nil.
 
 ;;; Code:
@@ -66,19 +66,19 @@ Should take one arg: the string to display"
   :group 'eldoc
   :type 'number)
 
-(defcustom eval-preferred-function 'pp-eval-expression
-  "Preferred function to use with `M-:'."
+(defcustom eval-prefered-function 'pp-eval-expression
+  "Prefered function to use with `M-:'."
   :group 'lisp
   :type 'function)
 
 (defcustom  eldoc-in-minibuffer-own-frame-p nil
-  "Whether minibuffer has its own frame or not."
+  "Whether minibuffer have own frame or not."
   :group 'lisp
   :type 'boolean)
 
 ;; Internal.
 (defvar eldoc-active-minibuffers-list nil
-  "List of active minibuffers with eldoc enabled.")
+  "Store actives minibuffers with eldoc enabled.")
 (defvar eldoc-mode-line-rolling-flag nil)
 
 (defun eldoc-store-minibuffer ()
@@ -89,7 +89,7 @@ See `with-eldoc-in-minibuffer'."
     (push (buffer-name) eldoc-active-minibuffers-list)))
 
 (defmacro with-eldoc-in-minibuffer (&rest body)
-  "Enable eldoc support for minibuffer input that runs in BODY."
+  "Enable eldoc support for minibuffer input that run in BODY."
   (declare (indent 0) (debug t))
   `(let ((timer (and eldoc-in-minibuffer
                      (run-with-idle-timer
@@ -102,15 +102,15 @@ See `with-eldoc-in-minibuffer'."
              'eldoc-store-minibuffer
            ,@body)
        (and timer (cancel-timer timer))
-       ;; Each time a minibuffer exits or aborts
-       ;; its buffer is removed from stack,
+       ;; Each time a minibuffer exit or abort
+       ;; his buffer is removed from stack,
        ;; assuming we can only exit the active minibuffer
        ;; on top of stack.
        (setq eldoc-active-minibuffers-list
              (cdr eldoc-active-minibuffers-list)))))
 
 (defun eldoc-current-buffer ()
-  "Return the current buffer prior to activating the minibuffer."
+  "The `current-buffer' before activating minibuffer."
   (with-selected-frame (last-nonminibuffer-frame)
     (window-buffer
      (cond (eldoc-in-minibuffer-own-frame-p
@@ -174,35 +174,10 @@ See `with-eldoc-in-minibuffer'."
   "Eval expression with eldoc support in mode-line."
   (interactive)
   (with-eldoc-in-minibuffer
-    (call-interactively eval-preferred-function)))
+    (call-interactively eval-prefered-function)))
 
 ;; Bind it to `M-:'.
 (global-set-key [remap eval-expression] 'eval-expression-with-eldoc)
-
-;;;; ChangeLog:
-
-;; 2012-10-27  Andreas Schwab  <schwab@linux-m68k.org>
-;; 
-;; 	* eldoc-eval.el: Spelling and doc fixes.
-;; 	(eval-preferred-function): Renamed from eval-prefered-function.
-;; 
-;; 2011-10-23  Chong Yidong  <cyd@gnu.org>
-;; 
-;; 	Add version tag to eldoc-eval.
-;; 
-;; 2011-10-15  thierry volpiatto  <thierry.volpiatto@gmail.com
-;; 
-;; 	* eldoc-eval.el Add infos in Commentary section.
-;; 
-;; 2011-10-11  Chong Yidong  <cyd@stupidchicken.com>
-;; 
-;; 	Fix header line in eldoc-eval.el.
-;; 
-;; 2011-09-25  Stefan Monnier  <monnier@iro.umontreal.ca>
-;; 
-;; 	New package eldoc-eval.
-;; 
-
 
 
 (provide 'eldoc-eval)

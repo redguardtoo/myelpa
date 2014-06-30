@@ -1056,7 +1056,7 @@ a file in the menu."
     (session-menu-maybe-accelerator menu-items (nreverse menu))))
 
 (defun session-file-prune-name (elem max-string)
-  "Prune name íf menu entry ELEM to use a miximum string length MAX-STRING."
+  "Prune name Ã­f menu entry ELEM to use a miximum string length MAX-STRING."
   (when (> (length elem) max-string)
     (let* ((sep-string (char-to-string session-directory-sep-char))
 	   (components (split-string elem (regexp-quote sep-string))))
