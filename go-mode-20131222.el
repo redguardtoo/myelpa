@@ -87,7 +87,7 @@
   ;; XEmacs does not support \_<, GNU Emacs does. In GNU Emacs we make
   ;; extensive use of \_< to support unicode in identifiers. Until we
   ;; come up with a better solution for XEmacs, this solution will
-  ;; break fontification in XEmacs for identifiers such as "typeÂµ".
+  ;; break fontification in XEmacs for identifiers such as "typeµ".
   ;; XEmacs will consider "type" a keyword, GNU Emacs won't.
 
   (if (go--xemacs-p)

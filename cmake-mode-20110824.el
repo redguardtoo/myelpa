@@ -9,7 +9,7 @@
 ; implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ; See the License for more information.
 ;=============================================================================
-;;; cmake-mode.el --- major-mode for editing CMake sources
+;;; cmake-mode.el --- Major mode for editing CMake sources.
 
 ;; URL: http://www.cmake.org/CMakeDocs/cmake-mode.el
 ;; Version: 20110824
@@ -217,8 +217,14 @@ the indentation.  Otherwise it retains the same position on the line"
 ;; Syntax table for this mode.  Initialize to nil so that it is
 ;; regenerated when the cmake-mode function is called.
 ;;
-(defvar cmake-mode-syntax-table nil "Syntax table for cmake-mode.")
-(setq cmake-mode-syntax-table nil)
+(defvar cmake-mode-syntax-table 
+  (let ((table (make-syntax-table)))
+    (modify-syntax-entry ?_  "w" table)
+    (modify-syntax-entry ?\(  "()" table)
+    (modify-syntax-entry ?\)  ")(" table)
+    (modify-syntax-entry ?# "<" table)
+    (modify-syntax-entry ?\n ">" table))
+  "Syntax table for cmake-mode.")
 
 ;;
 ;; User hook entry point.
@@ -231,25 +237,19 @@ the indentation.  Otherwise it retains the same position on the line"
 (defvar cmake-tab-width 2)
 
 ;------------------------------------------------------------------------------
+;;;###autoload (add-to-list 'auto-mode-alist '("^CMakeLists\\.txt\\'" . cmake-mode))
+;;;###autoload (add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-mode))
 
-;;
-;; CMake mode startup function.
-;;
-(defun cmake-mode ()
-  "Major mode for editing CMake listfiles."
-  (interactive)
-  (kill-all-local-variables)
-  (setq major-mode 'cmake-mode)
-  (setq mode-name "CMAKE")
+;; For compatibility with Emacs < 24
+(defalias 'cmake-parent-mode
+  (if (fboundp 'prog-mode) 'prog-mode 'fundamental-mode))
 
-  ; Create the syntax table
-  (setq cmake-mode-syntax-table (make-syntax-table))
-  (set-syntax-table cmake-mode-syntax-table)
-  (modify-syntax-entry ?_  "w" cmake-mode-syntax-table)
-  (modify-syntax-entry ?\(  "()" cmake-mode-syntax-table)
-  (modify-syntax-entry ?\)  ")(" cmake-mode-syntax-table)
-  (modify-syntax-entry ?# "<" cmake-mode-syntax-table)
-  (modify-syntax-entry ?\n ">" cmake-mode-syntax-table)
+;;------------------------------------------------------------------------------
+;; CMake mode definition.
+;;
+;;;###autoload
+(define-derived-mode cmake-mode cmake-parent-mode "CMake"
+  "Major mode for editing CMake source files."
 
   ; Setup font-lock mode.
   (make-local-variable 'font-lock-defaults)
@@ -261,14 +261,9 @@ the indentation.  Otherwise it retains the same position on the line"
 
   ; Setup comment syntax.
   (make-local-variable 'comment-start)
-  (setq comment-start "#")
+  (setq comment-start "#"))
 
-  ; Run user hooks.
-  (run-hooks 'cmake-mode-hook))
-
-; Help mode starts here
-
-
+;;------------------------------------------------------------------------------
 (defun cmake-command-run (type &optional topic)
   "Runs the command cmake with the arguments specified.  The
 optional argument topic will be appended to the argument list."
