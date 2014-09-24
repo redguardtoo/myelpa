@@ -5,6 +5,7 @@
  (packed . [(20140913 1531) ((cl-lib (0 5))) "package manager agnostic Emacs Lisp package utilities" single])
  (auto-compile . [(20140913 1532) ((cl-lib (0 5)) (packed (0 3 5))) "automatically compile Emacs Lisp libraries" single])
  (ace-jump-mode . [(2 0) nil "a quick cursor location minor mode for emacs" single])
+ (ag . [(0 44) nil "A front-end for ag ('the silver searcher'), the C ack replacement." single])
  (expand-region . [(0 10 0) nil "Increase selected region by semantic units." tar])
  (fringe-helper . [(1 0 1) nil "helper functions for fringe bitmaps" single])
  (haskell-mode . [(13 10) nil "A Haskell editing mode" tar])
