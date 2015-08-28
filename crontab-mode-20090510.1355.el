@@ -1,5 +1,4 @@
 ;;; crontab-mode.el --- Mode for editing crontab files
-;; Version: 20090510.1355
 ;;
 ;; ~/share/emacs/pkg/crontab/crontab-mode.el ---
 ;;
@@ -8,6 +7,7 @@
 
 ;; Author:    Harley Gorrell <harley@mahalito.net>
 ;; URL:       http://www.mahalito.net/~harley/elisp/crontab-mode.el
+;; Package-Version: 20090510.1355
 ;; License:   GPL v2
 ;; Keywords: cron, crontab, emacs
 

@@ -4,8 +4,8 @@
 
 ;; Author: Dmitry Galinsky, Howard Yeh
 ;; URL: https://github.com/eschulte/jump.el
-;; Version: 20121016.157
-;; X-Original-Version: 1.1
+;; Package-Version: 20121016.157
+;; Version: 1.1
 ;; Created: 2007-11-02
 ;; Keywords: ruby rails languages oop
 

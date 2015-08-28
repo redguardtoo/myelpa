@@ -4,8 +4,8 @@
 
 ;; Author: Eric Schulte
 ;; URL: https://github.com/eschulte/rinari
-;; Version: 2.11
-;; X-Original-Version: 0.17
+;; Package-Version: 2.11
+;; Version: 0.17
 ;; Created: 2008-08-23
 ;; Keywords: test convenience
 ;; Package-Requires: ((inf-ruby "2.2.1"))

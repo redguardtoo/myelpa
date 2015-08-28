@@ -1,10 +1,10 @@
 ;;; pointback.el --- Restore window points when returning to buffers
-;; Version: 20100210.752
 
 ;; Copyright (C) 2009  Markus Triska
 
 ;; Author: Markus Triska <markus.triska@gmx.at>
 ;; Keywords: convenience
+;; Package-Version: 20100210.752
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by

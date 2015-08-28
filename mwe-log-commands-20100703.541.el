@@ -1,10 +1,10 @@
 ;;; mwe-log-commands.el --- log keyboard commands to buffer
-;; Version: 20100703.541
 
 ;; Copyright (C) 2004  Free Software Foundation, Inc.
 
 ;; Author: Michael Weber <michaelw@foldr.org>
 ;; Keywords: help
+;; Package-Version: 20100703.541
 ;; Initial-version: <2004-10-07 11:41:28 michaelw>
 ;; Time-stamp: <2004-11-06 17:08:11 michaelw>
 

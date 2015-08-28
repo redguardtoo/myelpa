@@ -4,8 +4,8 @@
 
 ;; Author: Steve Purcell <steve@sanityinc.com>
 ;; URL: https://github.com/purcell/flymake-easy
-;; Version: 0.10
-;; X-Original-Version: DEV
+;; Package-Version: 0.10
+;; Version: DEV
 ;; Keywords: convenience, internal
 
 ;; This program is free software; you can redistribute it and/or modify

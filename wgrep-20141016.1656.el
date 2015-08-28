@@ -2,10 +2,10 @@
 
 ;; Author: Masahiro Hayashi <mhayashi1120@gmail.com>
 ;; Keywords: grep edit extensions
+;; Package-Version: 20141016.1656
 ;; URL: http://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el
 ;; Emacs: GNU Emacs 22 or later
-;; Version: 20141016.1656
-;; X-Original-Version: 2.1.10
+;; Version: 2.1.10
 
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as

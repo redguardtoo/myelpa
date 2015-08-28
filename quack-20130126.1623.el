@@ -1,5 +1,4 @@
 ;;; quack.el --- enhanced support for editing and running Scheme code
-;; Version: 20130126.1623
 
 (defconst quack-copyright    "Copyright (C) 2002-2012 Neil Van Dyke")
 (defconst quack-copyright-2  "Portions Copyright (C) Free Software Foundation")
@@ -4654,6 +4653,7 @@ Provided by Quack: http://www.neilvandyke.org/quack/"
 ;;                          (cdr overlays)
 ;;                        '())))
 ;;     url))
+;; Package-Version: 20130126.1623
 ;; 
 ;; (defun quack-browse-overlaid-url (pt)
 ;;   ;; Dehydration.

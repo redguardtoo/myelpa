@@ -2,8 +2,8 @@
 ;;
 ;;; Author: Steve Purcell <steve@sanityinc.com>
 ;;; Homepage: https://github.com/purcell/flymake-css
-;; Version: 0.3
-;;; X-Original-Version: DEV
+;;; Version: DEV
+;; Package-Version: 0.3
 ;;; Package-Requires: ((flymake-easy "0.1"))
 ;;
 ;;; Commentary:

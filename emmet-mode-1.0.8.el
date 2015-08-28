@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009-2012 Chris Done
 
 ;; Version: 1.0.8
-;; X-Original-Version: 1.0.8
+;; Package-Version: 1.0.8
 ;; Author: Shin Aoyama <smihica@gmail.com>
 ;; URL: https://github.com/smihica/emmet-mode
 ;; Last-Updated: 2014-02-19 Wed

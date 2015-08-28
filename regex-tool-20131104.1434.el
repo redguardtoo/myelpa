@@ -5,8 +5,8 @@
 ;; Author: John Wiegley <johnw@newartisans.com>
 ;; Created: 29 Oct 2007
 ;; Modified: 17 Nov 2007
-;; Version: 20131104.1434
-;; X-Original-Version: 1.2
+;; Version: 1.2
+;; Package-Version: 20131104.1434
 ;; Keywords: regex languages programming development
 ;; X-URL: http://www.newartisans.com/
 

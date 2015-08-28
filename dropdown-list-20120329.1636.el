@@ -4,9 +4,9 @@
 ;; Description: Drop-down menu interface
 ;; Author: Jaeyoun Chung [jay.chung@gmail.com]
 ;; URL: http://www.emacswiki.org/cgi-bin/wiki/download/dropdown-list.el
+;; Package-Version: 20120329.1636
 ;; origin: http://www.emacswiki.org/cgi-bin/wiki/dropdown-list.el
-;; Version: 20120329.1636
-;; X-Original-Version: 1.45
+;; Version: 1.45
 ;; Keywords: menu convenience dropdown
 ;; Compatibility: GNU Emacs 21.x, GNU Emacs 22.x, GNU Emacs 23.x
 ;;

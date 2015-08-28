@@ -4,8 +4,8 @@
 
 ;; Author: Phil Hagelberg, Eric Schulte
 ;; URL: https://github.com/eschulte/rinari
-;; Version: 2.11
-;; X-Original-Version: DEV
+;; Package-Version: 2.11
+;; Version: DEV
 ;; Created: 2006-11-10
 ;; Keywords: ruby, rails, project, convenience, web
 ;; EmacsWiki: Rinari

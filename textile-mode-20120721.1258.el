@@ -1,5 +1,5 @@
 ;;; textile-mode.el --- Textile markup editing major mode
-;; Version: 20120721.1258
+;; Package-Version: 20120721.1258
 
 ;; Copyright (C) 2006 Free Software Foundation, Inc.
 

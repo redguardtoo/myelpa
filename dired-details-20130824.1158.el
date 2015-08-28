@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2003-2011 Rob Giardina
 
-;; Version: 20130824.1158
-;; X-Original-Version: 1.3.2
+;; Version: 1.3.2
+;; Package-Version: 20130824.1158
 ;; Keywords: dired, hide
 ;; Author: Rob Giardina <rob.giardina.ohmmanepadmespam@oracle.com>
 ;; Maintainer: Rob Giardina

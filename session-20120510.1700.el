@@ -4,8 +4,8 @@
 ;; Free Software Foundation, Inc.
 ;;
 ;; Author: Christoph Wedler <wedler@users.sourceforge.net>
-;; Version: 20120510.1700
-;; X-Original-Version: 2.3a (see also `session-version' below)
+;; Version: 2.3a (see also `session-version' below)
+;; Package-Version: 20120510.1700
 ;; Keywords: session, session management, desktop, data, tools
 ;; X-URL: http://emacs-session.sourceforge.net/
 

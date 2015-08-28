@@ -1,10 +1,10 @@
 ;;; legalese.el --- Add legalese to your program files
-;; Version: 20100119.2148
 
 ;; Copyright (C) 2004  Jorgen Schaefer <forcer@forcix.cx>
 
 ;; Author: Jorgen Schaefer <forcer@forcix.cx>
 ;; Keywords: convenience
+;; Package-Version: 20100119.2148
 
 ;; This file is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by

@@ -1,5 +1,4 @@
 ;;; dsvn.el --- Subversion interface
-;; Version: 20130120.1257
 
 ;; Copyright 2006-2010 Virtutech AB
 ;; Copyright 2010 Intel
@@ -9,6 +8,7 @@
 ;; Maintainer: Mattias Engdegård <mattiase@acm.org>
 ;; Created: 27 Jan 2006
 ;; Keywords: docs
+;; Package-Version: 20130120.1257
 
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as

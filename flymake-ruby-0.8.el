@@ -2,8 +2,8 @@
 ;;
 ;;; Author: Steve Purcell <steve@sanityinc.com>
 ;;; URL: https://github.com/purcell/flymake-ruby
-;; Version: 0.8
-;;; X-Original-Version: DEV
+;; Package-Version: 0.8
+;;; Version: DEV
 ;;; Package-Requires: ((flymake-easy "0.1"))
 ;;;
 ;;; Commentary:
