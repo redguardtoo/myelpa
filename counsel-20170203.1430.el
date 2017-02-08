@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20170104.737
+;; Package-Version: 20170203.1430
 ;; Version: 0.8.0
 ;; Package-Requires: ((emacs "24.3") (swiper "0.8.0"))
 ;; Keywords: completion, matching
@@ -358,9 +358,9 @@ Update the minibuffer with the amount of lines collected every
   "History for `counsel-unicode-char'.")
 
 ;;;###autoload
-(defun counsel-unicode-char ()
+(defun counsel-unicode-char (&optional count)
   "Insert a Unicode character at point."
-  (interactive)
+  (interactive "p")
   (let ((minibuffer-allow-text-properties t)
         (ivy-sort-max-size (expt 256 6)))
     (setq ivy-completion-beg (point))
@@ -375,7 +375,7 @@ Update the minibuffer with the amount of lines collected every
                         (with-ivy-window
                           (delete-region ivy-completion-beg ivy-completion-end)
                           (setq ivy-completion-beg (point))
-                          (insert-char (get-text-property 0 'result char))
+                          (insert-char (get-text-property 0 'result char) count)
                           (setq ivy-completion-end (point))))
               :history 'counsel-unicode-char-history
               :sort t)))
@@ -771,6 +771,10 @@ The libraries are offered from `load-path'."
                         (load-library
                          (get-text-property 0 'full-name x)))
               :keymap counsel-describe-map)))
+
+(ivy-set-actions
+ 'counsel-load-library
+ '(("d" counsel--find-symbol "definition")))
 
 ;;** `counsel-find-library'
 ;;;###autoload
@@ -2194,6 +2198,77 @@ INITIAL-INPUT can be given as the initial minibuffer input."
               :action (lambda (elem)
                         (goto-char (cdr elem))))))
 
+;;** `counsel-package'
+(defvar package--initialized)
+(defvar package-archive-contents)
+(declare-function package-installed-p "package")
+(declare-function package-delete "package")
+
+(defun counsel-package ()
+  "Install or delete packages.
+
+Packages not currently installed have a \"+\"
+prepended. Selecting one of these will try to install
+it. Currently installed packages have a \"-\" prepended, and
+selecting one of these will delete the package.
+
+Additional Actions:
+
+  \\<ivy-minibuffer-map>\\[ivy-dispatching-done] d: describe package"
+  (interactive)
+  (unless package--initialized
+    (package-initialize t))
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (let ((cands (mapcar #'counsel-package-make-package-cell
+                       package-archive-contents)))
+    (ivy-read "Packages (install +pkg or delete -pkg): "
+              (cl-sort cands #'counsel--package-sort)
+              :action #'counsel-package-action
+              :initial-input "^+ "
+              :require-match t
+              :caller 'counsel-package)))
+
+(defun counsel-package-make-package-cell (pkg)
+  (let* ((pkg-sym (car pkg))
+         (pkg-name (symbol-name pkg-sym)))
+    (cons (format "%s%s"
+                  (if (package-installed-p pkg-sym) "-" "+")
+                  pkg-name)
+          pkg)))
+
+(defun counsel-package-action (pkg-cons)
+  (let ((pkg (cadr pkg-cons)))
+    (if (package-installed-p pkg)
+        (package-delete pkg)
+      (package-install pkg))))
+
+(defun counsel-package-action-describe (pkg-cons)
+  "Call `describe-package' for package in PKG-CONS."
+  (describe-package (cadr pkg-cons)))
+
+(defun counsel-package-action-homepage (pkg-cons)
+  "Open homepage for package in PKG-CONS."
+  (let* ((desc-list (cddr pkg-cons))
+         (desc (if (listp desc-list) (car desc-list) desc-list))
+         (url (cdr (assoc :url (package-desc-extras desc)))))
+    (when url
+      (require 'browse-url)
+      (browse-url url))))
+
+(defun counsel--package-sort (a b)
+  "Sort function for `counsel-package'."
+  (let* ((a (car a))
+         (b (car b))
+         (a-inst (equal (substring a 0 1) "+"))
+         (b-inst (equal (substring b 0 1) "+")))
+    (or (and a-inst (not b-inst))
+        (and (eq a-inst b-inst) (string-lessp a b)))))
+
+(ivy-set-actions 'counsel-package
+                 '(("d" counsel-package-action-describe "describe package")
+                   ("h" counsel-package-action-homepage "open package homepage")))
+
 ;;** `counsel-tmm'
 (defvar tmm-km-list nil)
 (declare-function tmm-get-keymap "tmm")
@@ -2617,16 +2692,23 @@ And insert it into the minibuffer. Useful during
 (defvar counsel-linux-apps-faulty nil
   "List of faulty data located in /usr/share/applications.")
 
+(defcustom counsel-linux-apps-directories
+  '("/usr/local/share/applications/" "/usr/share/applications/")
+  "Directories in which to search for applications (.desktop files)."
+  :group 'counsel
+  :type '(list directory))
+
 (defun counsel-linux-apps-list ()
-  (let ((files
-         (delete
-          ".." (delete
-                "." (file-expand-wildcards "/usr/share/applications/*.desktop")))))
+  (let ((files (apply 'append
+                      (mapcar
+                       (lambda (dir)
+                         (directory-files dir t ".*\\.desktop$"))
+                       counsel-linux-apps-directories))))
     (dolist (file (cl-set-difference files (append (mapcar 'car counsel-linux-apps-alist)
                                                    counsel-linux-apps-faulty)
                                      :test 'equal))
       (with-temp-buffer
-        (insert-file-contents (expand-file-name file "/usr/share/applications"))
+        (insert-file-contents file)
         (let (name comment exec)
           (goto-char (point-min))
           (if (null (re-search-forward "^Name *= *\\(.*\\)$" nil t))
@@ -2669,7 +2751,7 @@ And insert it into the minibuffer. Useful during
                      (format "Run %s on: " short-name)))))
     (if file
         (call-process-shell-command
-         (format "gtk-launch %s %s"
+         (format "gtk-launch %s \"%s\""
                  (file-name-nondirectory desktop-shortcut)
                  file))
       (user-error "cancelled"))))

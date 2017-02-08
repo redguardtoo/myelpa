@@ -357,7 +357,7 @@ If the result is true, return the function."
   (if ffip-project-root (file-name-as-directory ffip-project-root)
     (ffip-project-root)))
 
-i;;###autoload
+;;;###autoload
 (defun ffip-ivy-resume ()
   "Wrapper of `ivy-resume'.  Resume the search saved at `ffip-ivy-last-saved'."
   (interactive)

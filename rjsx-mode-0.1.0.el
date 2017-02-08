@@ -4,7 +4,7 @@
 
 ;; Author: Felipe Ochoa <felipe@fov.space>
 ;; URL: https://github.com/felipeochoa/rjsx-mode/
-;; Package-Version: 20161115.456
+;; Package-Version: 0.1.0
 ;; Package-Requires: ((emacs "24.4") (js2-mode "20160623"))
 ;; Version: 1.0
 ;; Keywords: languages
