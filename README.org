@@ -1,0 +1,20 @@
+* myelpa
+Emacs package repository backup used by [[https://github.com/redguardtoo/emacs.d]]
+* Usage
+You can use this repository either as remote repository or local repository.
+** Used as remote repository
+Add below code into =.emacs= and restart Emacs,
+#+begin_src elisp
+(add-to-list 'package-archives
+             ("myelpa" . "https://raw.githubusercontent.com/redguardtoo/myelpa/master/" ))
+#+end_src
+** Used as local repository
+Step 1, run below command in shell,
+#+begin_src bash
+git clone https://github.com/redguardtoo/myelpa.git /what-ever-directory-you-like/myelpa
+#+end_src
+Step 2, Add below code into =.emacs= and restart Emacs,
+#+begin_src elisp
+(add-to-list 'package-archives
+             ("myelpa" . "/what-ever-directory-you-like/myelpa/" ))
+#+end_src
