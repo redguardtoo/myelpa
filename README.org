@@ -18,3 +18,6 @@ Step 2, Add below code into =.emacs= and restart Emacs,
 (add-to-list 'package-archives
              ("myelpa" . "/what-ever-directory-you-like/myelpa/" ))
 #+end_src
+* Old Emacs
+- Emacs 24.3, [[https://codeload.github.com/redguardtoo/myelpa/zip/emacs24.3]]
+- Emacs 24.4, [[https://codeload.github.com/redguardtoo/myelpa/zip/emacs24.4]]
